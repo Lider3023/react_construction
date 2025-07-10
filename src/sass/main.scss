@@ -1,0 +1,96 @@
+
+@import url(./fonts.scss);
+
+$themes247_net_black: #000;
+$themes247_net_black_500: rgba(0, 0, 0, 0.5);
+$themes247_net_boulder: #777;
+$themes247_net_bright_turquoise: #0ec8f5;
+$themes247_net_cerulean: #0094d3;
+$themes247_net_cod_gray: #1a1a1a;
+$themes247_net_dove_gray: #626262;
+$themes247_net_dusty_gray: #979797;
+$themes247_net_emperor: #4f4f4f;
+$themes247_net_flamingo: #f2623b;
+$themes247_net_lightning_yellow: #ffc925;
+$themes247_net_mercury: #eaeaea;
+$themes247_net_mine_shaft: #252525;
+$themes247_net_punch: #d82e2e;
+$themes247_net_san_marino: #3a6bb1;
+$themes247_net_seashell: #f1f1f1;
+$themes247_net_silver_chalice: #adadad;
+$themes247_net_tundora: #484848;
+$themes247_net_white: #fff;
+$themes247_net_white_0_20: rgba(255, 255, 255, 0);
+$themes247_net_wild_sand: #f7f7f7;
+
+$color_white_solid: #fff;
+$color_grey_15: #252525;
+$color_yellow_57: #ffc925;
+$color_black_500: rgba(0, 0, 0, 0.5);
+$color_grey_47: #777;
+$color_grey_92: #eaeaea;
+$color_red_51: #d82e2e;
+$color_grey_68: #adadad;
+$color_grey_31: #4f4f4f;
+$color_grey_28: #484848;
+$color_grey_38: #626262;
+$color_grey_95: #f1f1f1;
+$color_grey_97: #f7f7f7;
+$color_cyan_51: #0ec8f5;
+$color_red_59: #f2623b;
+$color_azure_41: #0094d3;
+$color_azure_46: #3a6bb1;
+$color_grey_59: #979797;
+$color_white_0_20: rgba(255, 255, 255, 0);
+$color_blue_33_0: rgba(72, 76, 97, 0);
+$color_blue_33_800: rgba(72, 76, 97, 0.8);
+$color_black_0: rgba(0, 0, 0, 0);
+$color_grey_6: #101010;
+$color_grey_10: #1a1a1a;
+$color_black_solid: #000;
+
+:root {
+  --color-white-solid: #{$color_white_solid};
+  --color-grey-15: #{$color_grey_15};
+  --color-yellow-57: #{$color_yellow_57};
+  --color-black--500: #{$color_black_500};
+  --color-grey-47: #{$color_grey_47};
+  --color-grey-92: #{$color_grey_92};
+  --color-red-51: #{$color_red_51};
+  --color-grey-68: #{$color_grey_68};
+  --color-grey-31: #{$color_grey_31};
+  --color-grey-28: #{$color_grey_28};
+  --color-grey-38: #{$color_grey_38};
+  --color-grey-95: #{$color_grey_95};
+  --color-grey-97: #{$color_grey_97};
+  --color-cyan-51: #{$color_cyan_51};
+  --color-red-59: #{$color_red_59};
+  --color-azure-41: #{$color_azure_41};
+  --color-azure-46: #{$color_azure_46};
+  --color-grey-59: #{$color_grey_59};
+  --color-white--0-20: #{$color_white_0_20};
+  --color-blue-33-0: #{$color_blue_33_0};
+  --color-blue-33-800: #{$color_blue_33_800};
+  --color-black--0: #{$color_black_0};
+  --color-grey-6: #{$color_grey_6};
+  --color-grey-10: #{$color_grey_10};
+  --color-black-solid: #{$color_black_solid};
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  border: none;
+  font-family: 'Montserrat';
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+.choose {
+  margin-top: 100px;
+  display: flex;
+  background: var(--color-grey-97);
+  margin-bottom: 100px;
+  &_image {
+    width: 50%;
+    height: 544px;
+  }
+  &_content {
+    width: 50%;
+    padding: 82px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    &_title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 150%;
+      color: var(--color-grey-15);
+      margin-bottom: 20px;
+    }
+    &_info {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

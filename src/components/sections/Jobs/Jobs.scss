@@ -1,0 +1,31 @@
+.jobs {
+  &__info {
+    display: flex;
+    margin-bottom: 110px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px;
+      .text {
+        text-align: center;
+        h3 {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 150%;
+          text-align: center;
+          color: var(--color-grey-15);
+          margin-top: 30px;
+          margin-bottom: 12px;
+        }
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 187%;
+          text-align: center;
+          color: var(--color-grey-47);
+          margin-bottom: 26px;
+        }
+      }
+    }
+  }
+}

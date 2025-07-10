@@ -1,0 +1,15 @@
+$Montserrat: ('Bold', 700),
+             ('SemiBold', 600),
+             ('Regular', 400),
+             ('Medium', 500);
+            
+
+@each $font, $weight in $Montserrat {
+  @font-face {
+    font-family: 'Montserrat';
+    font-weight: $weight;
+    src: url('../assets/fonts/Manrope-#{$font}.ttf') 
+}
+}
+
+
