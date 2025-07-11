@@ -5,7 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useWindowSize } from "../../../utils/WindowSize";
+
+
 const About: FC = () => {
+  
+const {width, height}=useWindowSize()
+
+const slidesPerView=width <1230 ? width<1000 ? 1 : 2 : 3
   const feedbacks = [
     {
       text: `Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.`,
@@ -85,8 +92,8 @@ const About: FC = () => {
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true, enabled: true }}
-            slidesPerView={3}
-            slidesPerGroup={3}
+            slidesPerView={slidesPerView}
+            slidesPerGroup={slidesPerView}
             spaceBetween={30}
             loop={true}
             grabCursor={true}

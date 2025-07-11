@@ -6,8 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {
-  facebook,
-  google,
   link1,
   link2,
   link3,
@@ -17,11 +15,15 @@ import {
   team2,
   team3,
   team4,
-  twitter,
 } from "../../../utils/img";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "../../../utils/WindowSize";
 
 const Team: FC = () => {
+  const { width, height } = useWindowSize();
+
+  const slidesPerView = width < 1230 ? width < 1000 ?  width<905 ? 1: 2 : 3 : 4;
+  const logoShow=width < 1230 ? width < 1000 ? 3 : 4 : 5
   const people = [
     {
       name: "Richard Wagner",
@@ -73,16 +75,6 @@ const Team: FC = () => {
       position: "Electricians",
       image: team4,
     },
-    {
-      name: "Tommy Atkins",
-      position: "Electricians",
-      image: team4,
-    },
-    {
-      name: "Sarah Spence",
-      position: "Construction Assistant",
-      image: team2,
-    },
   ];
   const images = [
     { src: link1, link: "/" },
@@ -127,15 +119,15 @@ const Team: FC = () => {
               autoplay={{ delay: 4000 }}
               loop={true}
               spaceBetween={60}
-              slidesPerView={3}
-              slidesPerGroup={3}
+              slidesPerView={slidesPerView}
+              slidesPerGroup={slidesPerView}
               grabCursor={true}
               direction="horizontal"
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                },
-              }}
+              // breakpoints={{
+              //   768: {
+              //     slidesPerView: 3,
+              //   },
+              // }}
             >
               {people.map((person, index) => (
                 <SwiperSlide key={index}>
@@ -200,8 +192,8 @@ const Team: FC = () => {
         <div className="team_links">
           <div className="image-swiper-container container">
             <Swiper
-              modules={[Navigation, Autoplay]}
-              slidesPerView={5}
+              modules={[ Autoplay]}
+              slidesPerView={logoShow}
               autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,

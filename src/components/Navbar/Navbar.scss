@@ -5,13 +5,13 @@
   position: fixed;
   top: 0;
   left: 0;
+  
   background: rgba(0, 0, 0, 0.397);
   z-index: 4;
   &__info {
     display: flex;
     gap: 14px;
     align-items: center;
-
   }
   &__content {
     padding: 15px;
@@ -27,6 +27,24 @@
       display: flex;
       align-items: center;
       gap: 18px;
+      @media (max-width: 995px) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #333;
+        padding: 20px 60px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        &.open {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
       .menu-item {
         position: relative;
         margin-right: 20px;
@@ -63,4 +81,26 @@
     right: -10px;
     font-weight: bold;
   }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  @media (max-width: 995px) {
+    display: flex;
+  }
+}
+
+.burger .bar {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }

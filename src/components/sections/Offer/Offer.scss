@@ -28,6 +28,11 @@
     margin-bottom: 118px;
     display: flex;
     gap: 30px;
+    @media (max-width: 1701px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .card {
       text-align: center;
       padding: 1px;
@@ -35,6 +40,9 @@
       height: 168px;
       border-radius: 3px;
       border: 1px solid rgb(212, 212, 212);
+      @media (max-width: 905px) {
+        width: 368px;
+      }
       .svg {
         width: 168px;
         height: 126px;
@@ -42,6 +50,9 @@
         justify-content: center;
         align-items: center;
         background: var(--color-grey-97);
+        @media (max-width: 905px) {
+          width: 368px;
+        }
         svg {
           path {
             transition: 0.2s ease-in-out;
@@ -65,10 +76,19 @@
   &_info {
     display: flex;
     position: relative;
+    @media (max-width: 1166px) {
+      flex-direction: column;
+      align-items: center;
+    }
     &_items {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
+      @media (max-width: 1166px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
       .item {
         display: flex;
         align-items: center;
@@ -151,11 +171,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: 1166px) {
+        flex-direction: column;
+        gap: 20px;
+      }
       p {
         font-weight: 500;
         font-size: 20px;
         line-height: 150%;
         color: var(--color-white-solid);
+        @media (max-width: 650px) {
+          text-align: center;
+        }
       }
       button {
         border-radius: 3px;
@@ -179,3 +206,4 @@
     }
   }
 }
+

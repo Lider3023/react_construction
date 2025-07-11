@@ -2,6 +2,7 @@ import React, { useEffect, useState, type FC, type ReactNode } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import "./MainLayout.scss";
 import { motion } from "framer-motion";
+import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 interface IProps {
   children: ReactNode;
@@ -21,6 +22,7 @@ const MainLayout: FC<IProps> = ({ children }) => {
         >
           {children}
         </motion.div>
+        <BackToTopButton/>
       </div>
     </>
   );

@@ -13,6 +13,9 @@
       color: var(--color-white-solid);
       text-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
       margin-bottom: 20px;
+      @media (max-width: 1701px) {
+        font-size: 36px;
+      }
     }
     p {
       font-weight: 400;
@@ -21,10 +24,16 @@
       letter-spacing: 0.25em;
       color: var(--color-white-solid);
       margin-bottom: 50px;
+      @media (max-width: 1701px) {
+        font-size: 18px;
+      }
     }
-    .button{
-        font-weight: 900;
-        font-size: 14px;
+    .button {
+      font-weight: 900;
+      font-size: 14px;
+      @media (max-width: 1701px) {
+       font-size: 12px;        
+      }
     }
   }
 }

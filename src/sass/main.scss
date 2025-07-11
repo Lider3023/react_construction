@@ -1,4 +1,3 @@
-
 @import url(./fonts.scss);
 
 $themes247_net_black: #000;
@@ -85,7 +84,7 @@ $color_black_solid: #000;
   outline: none;
   list-style: none;
   border: none;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .container {
@@ -93,4 +92,14 @@ $color_black_solid: #000;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+html {
+  scroll-behavior: smooth;
 }

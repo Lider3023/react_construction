@@ -2,7 +2,14 @@ import React, { type FC } from "react";
 import CustomBtn from "../../../UI/CustomBtn/CustomBtn";
 import "./HomeContent.scss";
 import { motion } from "framer-motion";
+import { useWindowSize } from "../../../utils/WindowSize";
 const HomeContent: FC = () => {
+
+  const {width, height}=useWindowSize()
+  
+  const widthBtn= width < 1702 ? 200 : 256
+  const heightBtn=width < 1702 ? 40 : 60
+
   return (
     <>
       <div className="container">
@@ -27,7 +34,7 @@ const HomeContent: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <CustomBtn text="OUR PORTFOLIO" width={256} height={60} />
+            <CustomBtn text="OUR PORTFOLIO" width={widthBtn} height={heightBtn} />
           </motion.div>
         </div>
       </div>

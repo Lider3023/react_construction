@@ -2,10 +2,21 @@
   &__info {
     display: flex;
     margin-bottom: 110px;
+    @media (max-width: 905px) {
+      flex-direction: column;
+    }
     .card {
       display: flex;
       flex-direction: column;
       padding: 0 15px;
+      @media (max-width: 905px) {
+        align-items: center;
+        margin-bottom: 30px;
+        img {
+        width: 370px;
+        height: 220px;
+        }
+      }
       .text {
         text-align: center;
         h3 {

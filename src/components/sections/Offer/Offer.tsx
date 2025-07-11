@@ -12,7 +12,7 @@ const Offer: FC = () => {
           <h2 className="offer_title">WHAT WE OFFER</h2>
           <svg
             width="1171"
-            height="4"
+            height="14"
             viewBox="0 0 1171 4"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

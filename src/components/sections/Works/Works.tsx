@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import React, { useState, type FC } from "react";
 import "./Works.scss";
 import { Link } from "react-router-dom";
 import {
@@ -11,18 +11,28 @@ import {
   img7,
   img8,
 } from "../../../utils/img";
+import { motion, AnimatePresence } from "framer-motion";
 const Works: FC = () => {
   const images = [
-    { id: 1, image: img1 },
-    { id: 2, image: img2 },
-    { id: 3, image: img3 },
-    { id: 4, image: img4 },
-    { id: 5, image: img5 },
-    { id: 6, image: img6 },
-    { id: 7, image: img7 },
-    { id: 8, image: img8 },
+    { id: 1, image: img1, categories: ["Architecture"] },
+    { id: 2, image: img2, categories: ["Building"] },
+    { id: 3, image: img3, categories: ["Interior", "Garden", "Building"] },
+    { id: 4, image: img4, categories: ["Office", "Architecture"] },
+    { id: 5, image: img5, categories: ["Workspace"] },
+    {
+      id: 6,
+      image: img6,
+      categories: ["Architecture", "Interior", "Building"],
+    },
+    { id: 7, image: img7, categories: ["Garden", "Architecture"] },
+    { id: 8, image: img8, categories: ["Interior", "Office", "Architecture"] },
   ];
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const filteredImages =
+    selectedCategory === "All"
+      ? images
+      : images.filter((img) => img.categories.includes(selectedCategory));
   return (
     <>
       <div className="works">
@@ -38,53 +48,46 @@ const Works: FC = () => {
             <rect x="550.5" y="0.48999" width="70" height="3" fill="#FFC925" />
           </svg>
           <ul className="works_list">
-            <li>
-              <Link to="/" className="link">
-                All
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Architecture
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Building
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Garden
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Interior
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Office
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="link">
-                Workspace
-              </Link>
-            </li>
+            {[
+              "All",
+              "Architecture",
+              "Building",
+              "Garden",
+              "Interior",
+              "Office",
+              "Workspace",
+            ].map((cat) => (
+              <li key={cat}>
+                <button
+                  className={`link ${selectedCategory === cat ? "active" : ""}`}
+                  onClick={() => setSelectedCategory(cat)}
+                >
+                  {cat}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="works__images">
-          {images.map((item) => (
-            <div className="box">
-              <img src={item.image} key={item.id} alt="" />
-              <div className="pop">
-                <h2>LUXURY BUILDINGS</h2>
-                <p>Construction</p>
-              </div>
-            </div>
-          ))}
+        <div className="works__images grid">
+          <AnimatePresence>
+            {filteredImages.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+                className="box"
+              >
+                <img src={item.image} alt="" />
+                <div className="pop">
+                  <h2>LUXURY BUILDINGS</h2>
+                  <p>{item.categories.join(", ")}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </>

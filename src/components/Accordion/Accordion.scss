@@ -1,7 +1,18 @@
 .accordion {
   border-radius: 5px;
   width: 706px;
-
+  @media (max-width: 1701px) {
+    width: 650px;
+  }
+  @media (max-width: 1300px) {
+    width: 600px;
+  }
+  @media (max-width: 1170px) {
+    width: 500px;
+  }
+   @media (max-width: 965px) {
+    width: 400px;
+  }
   .accordion-header {
     background: var(--color-white-solid);
     color: white;
@@ -24,8 +35,10 @@
       font-size: 16px;
       line-height: 150%;
       color: var(--color-grey-15);
+      @media (max-width: 965px) {
+font-size: 14px;
+      }
     }
-   
 
     .icon {
       transition: transform 0.3s ease;

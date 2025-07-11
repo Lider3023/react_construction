@@ -1,11 +1,19 @@
-import React, { type FC } from "react";
+import React, { useState, type FC } from "react";
 import "./Navbar.scss";
 import { Link, NavLink } from "react-router-dom";
-import { cart, logo } from "../../utils/img";
+import { logo } from "../../utils/img";
 import { motion } from "framer-motion";
 import CustomBtn from "../../UI/CustomBtn/CustomBtn";
 
 const Navbar: FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const handleScroll = (id: string) => {
+  //   const el = document.getElementById(id);
+  //   if (el) {
+  //     el.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -14,8 +22,34 @@ const Navbar: FC = () => {
             <motion.img src={logo} alt="" className="navbar__content_logo" />
           </Link>
           <div className="navbar__info">
-            <ul className="navbar__content_list">
-              <li> 
+            <button
+              className="burger"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                animate={
+                  isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
+                }
+                transition={{ duration: 0.1, type: "spring" }}
+                className="bar"
+              ></motion.span>
+              <motion.span
+                animate={{ opacity: isMenuOpen ? 0 : 1 }}
+                transition={{ duration: 0.1, type: "spring" }}
+                className="bar"
+              ></motion.span>
+              <motion.span
+                animate={
+                  isMenuOpen ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }
+                }
+                transition={{ duration: 0.1, type: "spring" }}
+                className="bar"
+              ></motion.span>
+            </button>
+
+            <ul className={`navbar__content_list ${isMenuOpen ? "open" : ""}`}>
+              <li>
                 <NavLink to="/" className="link">
                   Home
                   <svg
@@ -31,10 +65,9 @@ const Navbar: FC = () => {
                     />
                   </svg>
                 </NavLink>
-               
               </li>
               <li>
-                <NavLink to="/profile" className="link">
+                <NavLink to="/pages" className="link">
                   Pages
                   <svg
                     width="8"
@@ -51,7 +84,7 @@ const Navbar: FC = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="link">
+                <NavLink to="/elements" className="link">
                   Elements
                   <svg
                     width="8"
@@ -68,7 +101,7 @@ const Navbar: FC = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="link">
+                <NavLink to="/portfolio" className="link">
                   Portfolio
                   <svg
                     width="8"
@@ -85,17 +118,17 @@ const Navbar: FC = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="link">
+                <NavLink to="/blog" className="link">
                   Blog
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="link">
+                <NavLink to="/contact" className="link">
                   Contact
                 </NavLink>
               </li>
             </ul>
-            <NavLink to="/about" className="cart">
+            <NavLink to="/cart" className="cart">
               <svg
                 width="16"
                 height="16"
