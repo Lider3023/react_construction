@@ -1,22 +1,14 @@
-import React, { type FC } from 'react'
-import './Loader.scss'
+import React, { type FC } from "react";
+import s from "./Loader.module.scss";
 
-
-const Loader:FC = () => {
+const Loader: FC = () => {
   return (
-<>
-<div className="loader">
-<div className="loop cubes">
-    <div className="load cubes"></div>
-    <div className="load cubes"></div>
-    <div className="load cubes"></div>
-    <div className="load cubes"></div>
-    <div className="load cubes"></div>
-    <div className="load cubes"></div>
-</div>
-</div>
+    <>
+      <div className={s.box}>
+        <div className={s.loader}></div>
+      </div>
+    </>
+  );
+};
 
-</>  )
-}
-
-export default Loader
+export default Loader;

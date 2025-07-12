@@ -51,7 +51,7 @@ const Navbar: FC = () => {
 
             <ul className={`navbar__content_list ${isMenuOpen ? "open" : ""}`}>
               <li>
-                <Link to="/#home" className={`link ${useActiveSection('home') ? 'active' : ''}`}>
+                <Link to="/#home" className={`link ${useActiveSection('home') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Home
                   <svg
                     width="8"
@@ -68,7 +68,7 @@ const Navbar: FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#works" className={`link ${useActiveSection('works') ? 'active' : ''}`}>
+                <Link to="/#works" className={`link ${useActiveSection('works') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Pages
                   <svg
                     width="8"
@@ -85,7 +85,7 @@ const Navbar: FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#offer" className={`link ${useActiveSection('offer') ? 'active' : ''}`}>
+                <Link to="/#offer" className={`link ${useActiveSection('offer') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Elements
                   <svg
                     width="8"
@@ -102,7 +102,7 @@ const Navbar: FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#about" className={`link ${useActiveSection('about') ? 'active' : ''}`}>
+                <Link to="/#about" className={`link ${useActiveSection('about') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Portfolio
                   <svg
                     width="8"
@@ -119,12 +119,12 @@ const Navbar: FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#team" className={`link ${useActiveSection('team') ? 'active' : ''}`}>
+                <Link to="/#team" className={`link ${useActiveSection('team') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/#contact" className={`link ${useActiveSection('contact') ? 'active' : ''}`}>
+                <Link to="/#contact" className={`link ${useActiveSection('contact') ? 'active' : ''}`} onClick={()=>setIsMenuOpen(false)}>
                   Contact
                 </Link>
               </li>
