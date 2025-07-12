@@ -72,7 +72,7 @@ const slidesPerView=width <1230 ? width<1000 ? 1 : 2 : 3
 
   return (
     <>
-      <div className="about container">
+      <div className="about container" id="about">
         <h2 className="about__title">WHAT OTHER SAY ABOUT US</h2>
         <svg
           width="1171"

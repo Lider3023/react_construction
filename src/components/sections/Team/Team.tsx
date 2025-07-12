@@ -95,7 +95,7 @@ const Team: FC = () => {
   ];
   return (
     <>
-      <div className="team">
+      <div className="team" id="team">
         <div className="team_content container">
           <h2 className="team_title">OUR TEAM</h2>
           <svg

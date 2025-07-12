@@ -7,7 +7,7 @@ import CustomBtn from "../../../UI/CustomBtn/CustomBtn";
 const Offer: FC = () => {
   return (
     <>
-      <div className="offer">
+      <div className="offer" id="offer">
         <div className="offer_content">
           <h2 className="offer_title">WHAT WE OFFER</h2>
           <svg

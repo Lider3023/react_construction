@@ -13,7 +13,7 @@ const HomeContent: FC = () => {
   return (
     <>
       <div className="container">
-        <div className="home_content">
+        <div className="home_content" id="home">
           <motion.h1
             className="home_content_title"
             initial={{ scale: 1.6 }}

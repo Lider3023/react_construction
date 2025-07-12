@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { logo } from "../../utils/img";
 import { motion } from "framer-motion";
 import CustomBtn from "../../UI/CustomBtn/CustomBtn";
+import { useActiveSection } from "../../utils/useActiveSection";
 
 const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar: FC = () => {
     <nav className="navbar">
       <div className="container">
         <div className="navbar__content">
-          <Link to="/">
+          <Link to="/#home">
             <motion.img src={logo} alt="" className="navbar__content_logo" />
           </Link>
           <div className="navbar__info">
@@ -50,7 +51,7 @@ const Navbar: FC = () => {
 
             <ul className={`navbar__content_list ${isMenuOpen ? "open" : ""}`}>
               <li>
-                <NavLink to="/" className="link">
+                <Link to="/#home" className={`link ${useActiveSection('home') ? 'active' : ''}`}>
                   Home
                   <svg
                     width="8"
@@ -64,10 +65,10 @@ const Navbar: FC = () => {
                       fill="white"
                     />
                   </svg>
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/pages" className="link">
+                <Link to="/#works" className={`link ${useActiveSection('works') ? 'active' : ''}`}>
                   Pages
                   <svg
                     width="8"
@@ -81,10 +82,10 @@ const Navbar: FC = () => {
                       fill="white"
                     />
                   </svg>
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/elements" className="link">
+                <Link to="/#offer" className={`link ${useActiveSection('offer') ? 'active' : ''}`}>
                   Elements
                   <svg
                     width="8"
@@ -98,10 +99,10 @@ const Navbar: FC = () => {
                       fill="white"
                     />
                   </svg>
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/portfolio" className="link">
+                <Link to="/#about" className={`link ${useActiveSection('about') ? 'active' : ''}`}>
                   Portfolio
                   <svg
                     width="8"
@@ -115,17 +116,17 @@ const Navbar: FC = () => {
                       fill="white"
                     />
                   </svg>
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/blog" className="link">
+                <Link to="/#team" className={`link ${useActiveSection('team') ? 'active' : ''}`}>
                   Blog
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/contact" className="link">
+                <Link to="/#contact" className={`link ${useActiveSection('contact') ? 'active' : ''}`}>
                   Contact
-                </NavLink>
+                </Link>
               </li>
             </ul>
             <NavLink to="/cart" className="cart">

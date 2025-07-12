@@ -35,7 +35,7 @@ const Works: FC = () => {
       : images.filter((img) => img.categories.includes(selectedCategory));
   return (
     <>
-      <div className="works">
+      <div className="works" id="works">
         <div className="works__info container">
           <h1>RECENT WORKS</h1>
           <svg
